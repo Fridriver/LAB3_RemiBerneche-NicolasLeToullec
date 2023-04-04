@@ -19,12 +19,12 @@ public class GestionJeu : MonoBehaviour
     private int _accrochageNiveau2 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 2
     private float _tempsNiveau2 = 0.0f;  // Attribut qui conserve le temps pour le niveau 2
 
-    // ***** Méthodes privées *****
+    // ***** MÃ©thodes privÃ©es *****
     private void Awake()
     {
-        // Vérifie si un gameObject GestionJeu est déjà présent sur la scène si oui
-        // on détruit celui qui vient d'être ajouté. Sinon on le conserve pour le 
-        // scène suivante.
+        // VÃ©rifie si un gameObject GestionJeu est dÃ©jÃ  prÃ©sent sur la scÃ¨ne si oui
+        // on dÃ©truit celui qui vient d'Ãªtre ajoutÃ©. Sinon on le conserve pour le 
+        // scÃ¨ne suivante.
         int nbGestionJeu = FindObjectsOfType<GestionJeu>().Length;
         if (nbGestionJeu > 1)
         {
@@ -39,7 +39,7 @@ public class GestionJeu : MonoBehaviour
 
     private void Start()
     {
-        InstructionsDepart();  // Affiche les instructions de départ
+        InstructionsDepart();  // Affiche les instructions de dÃ©part
     }
 
     private void Update()
@@ -55,19 +55,19 @@ public class GestionJeu : MonoBehaviour
     }
 
     /*
-     * Méthode qui affiche les instructions au départ
+     * MÃ©thode qui affiche les instructions au dÃ©part
      */
     private static void InstructionsDepart()
     {
-        Debug.Log("*** Course à obstacles");
-        Debug.Log("Le but du jeu est d'atteindre la zone d'arrivée le plus rapidement possible");
-        Debug.Log("Chaque contact avec un obstable entraînera une pénalité");
+        Debug.Log("*** Course Ã  obstacles");
+        Debug.Log("Le but du jeu est d'atteindre la zone d'arrivÃ©e le plus rapidement possible");
+        Debug.Log("Chaque contact avec un obstable entraÃ®nera une pÃ©nalitÃ©");
     }
 
-    // ***** Méthodes publiques ******
+    // ***** MÃ©thodes publiques ******
 
     /*
-     * Méthode publique qui permet d'augmenter le pointage de 1
+     * MÃ©thode publique qui permet d'augmenter le pointage de 1
      */
     public void AugmenterPointage()
     {
@@ -92,7 +92,7 @@ public class GestionJeu : MonoBehaviour
         return _accrochageNiveau1;
     }
 
-    // Méthode qui reçoit les valeurs pour le niveau 1 et qui modifie les attributs respectifs
+    // MÃ©thode qui reÃ§oit les valeurs pour le niveau 1 et qui modifie les attributs respectifs
     public void SetNiveau1(int accrochages, float tempsNiv1)
     {
         _accrochageNiveau1 = accrochages;
@@ -113,14 +113,14 @@ public class GestionJeu : MonoBehaviour
         return _accrochageNiveau2;
     }
 
-    // Méthode qui reçoit les valeurs pour le niveau 2 et qui modifie les attributs respectifs
+    // MÃ©thode qui reÃ§oit les valeurs pour le niveau 2 et qui modifie les attributs respectifs
     public void SetNiveau2(int accrochages, float tempsNiv2)
     {
         _accrochageNiveau2 = accrochages;
         _tempsNiveau2 = tempsNiv2;
     }
 
-    //Méthode qui reçois le timer sans bouger au début
+    //MÃ©thode qui reÃ§ois le timer sans bouger au dÃ©but
     public float GetTempsDebut()
     {
         return _tempsDebut;

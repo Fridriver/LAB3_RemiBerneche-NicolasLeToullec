@@ -8,32 +8,32 @@ public class FinPartie : MonoBehaviour
 {
     // ***** Attributs *****
 
-    //private bool _finPartie = false;  // booléen qui détermine si la partie est terminée
+    //private bool _finPartie = false;  // boolÃ©en qui dÃ©termine si la partie est terminÃ©e
     private GestionJeu _gestionJeu; // attribut qui contient un objet de type GestionJeu
     private Player _player;  // attribut qui contient un objet de type Player
 
-    // ***** Méthode privées  *****
+    // ***** MÃ©thode privÃ©es  *****
     
     private void Start()
     {
-        _gestionJeu = FindObjectOfType<GestionJeu>();  // récupère sur la scène le gameObject de type GestionJeu
-        _player = FindObjectOfType<Player>();  // récupère sur la scène le gameObject de type Player
+        _gestionJeu = FindObjectOfType<GestionJeu>();  // rÃ©cupÃ¨re sur la scÃ¨ne le gameObject de type GestionJeu
+        _player = FindObjectOfType<Player>();  // rÃ©cupÃ¨re sur la scÃ¨ne le gameObject de type Player
     }
 
     /*
-     * Méthode qui se produit quand il y a collision avec le gameObject de fin
+     * MÃ©thode qui se produit quand il y a collision avec le gameObject de fin
      */
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")  // Si la collision est produite avec le joueur
         {
-            gameObject.GetComponent<MeshRenderer>().material.color = Color.green;  // on change la couleur du matériel à vert
-            //_finPartie = true; // met le booléen à vrai pour indiquer la fin de la partie
-            int noScene = SceneManager.GetActiveScene().buildIndex; // Récupère l'index de la scène en cours
+            gameObject.GetComponent<MeshRenderer>().material.color = Color.green;  // on change la couleur du matÃ©riel Ã  vert
+            //_finPartie = true; // met le boolÃ©en Ã  vrai pour indiquer la fin de la partie
+            int noScene = SceneManager.GetActiveScene().buildIndex; // RÃ©cupÃ¨re l'index de la scÃ¨ne en cours
 
-            if (noScene == 2)  // Si nous somme sur la dernière scène (scène 2)
+            if (noScene == 2)  // Si nous somme sur la derniÃ¨re scÃ¨ne (scÃ¨ne 2)
             {
-                int accrochages = _gestionJeu.GetPointage();  // Récupère le pointage total dans gestion jeu
+                int accrochages = _gestionJeu.GetPointage();  // RÃ©cupÃ¨re le pointage total dans gestion jeu
 
                 float tempsTotalniv1 = _gestionJeu.GetTempsNiv1() + _gestionJeu.GetAccrochagesNiv1();  //Calcul le temps total pour le niveau 1
 
@@ -47,7 +47,7 @@ public class FinPartie : MonoBehaviour
                 int _accrochagesNiveau3 = accrochages - _gestionJeu.GetAccrochagesNiv2(); // Calcul le nombre d'accrochages pour le niveau 3
                 float tempsTotalniv3 = _tempsNiveau3 + _accrochagesNiveau3; // Calcul le temps total pour le niveau 3
 
-                // Affichage des résultats finaux dans la console
+                // Affichage des rÃ©sultats finaux dans la console
                 Debug.Log("Fin de partie !!!!!!!");
 
                 //----------------------------------------------------------
@@ -55,46 +55,46 @@ public class FinPartie : MonoBehaviour
                 if (_gestionJeu.GetTempsDebut() < _gestionJeu.GetTempsNiv1())
                 {
                     Debug.Log("Le temps pour le niveau 1 est de : " + (_gestionJeu.GetTempsNiv1() - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
-                    Debug.Log("Vous avez accroché au niveau 1 : " + _gestionJeu.GetAccrochagesNiv1() + " obstacles");
+                    Debug.Log("Vous avez accrochÃ© au niveau 1 : " + _gestionJeu.GetAccrochagesNiv1() + " obstacles");
                     Debug.Log("Temps total niveau 1 : " + (tempsTotalniv1 - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
                 }
                 else
                 {
                     Debug.Log("Le temps pour le niveau 1 est de : " + (_gestionJeu.GetTempsDebut() - _gestionJeu.GetTempsNiv1()).ToString("f2") + " secondes");
-                    Debug.Log("Vous avez accroché au niveau 1 : " + _gestionJeu.GetAccrochagesNiv1() + " obstacles");
+                    Debug.Log("Vous avez accrochÃ© au niveau 1 : " + _gestionJeu.GetAccrochagesNiv1() + " obstacles");
                     Debug.Log("Temps total niveau 1 : " + (_gestionJeu.GetTempsDebut() - tempsTotalniv1).ToString("f2") + " secondes");
                 }
 
                 // Message pour le niveau 2
                 Debug.Log("Le temps pour le niveau 2 est de : " + _tempsNiveau2.ToString("f2") + " secondes");
-                Debug.Log("Vous avez accroché au niveau 2 : " + _accrochagesNiveau2 + " obstacles");
+                Debug.Log("Vous avez accrochÃ© au niveau 2 : " + _accrochagesNiveau2 + " obstacles");
                 Debug.Log("Temps total niveau 2 : " + tempsTotalniv2.ToString("f2") + " secondes");
 
                 // Message pour le niveau 3
                 Debug.Log("Le temps pour le niveau 3 est de : " + _tempsNiveau3.ToString("f2") + " secondes");
-                Debug.Log("Vous avez accroché au niveau 3 : " + _accrochagesNiveau3 + " obstacles");
+                Debug.Log("Vous avez accrochÃ© au niveau 3 : " + _accrochagesNiveau3 + " obstacles");
                 Debug.Log("Temps total niveau 3 : " + tempsTotalniv3.ToString("f2") + " secondes");
 
                 Debug.Log("Le temps total pour les trois niveau est de : " + ((tempsTotalniv1 + tempsTotalniv2 + tempsTotalniv3) - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
 
                 //Debug.Log("Temps sans jouer : " + _gestionJeu.GetTempsDebut().ToString("f2") + " secondes");
 
-                _player.finPartieJoueur();  // Appeler la méthode publique dans Player pour désactiver le joueur
+                _player.finPartieJoueur();  // Appeler la mÃ©thode publique dans Player pour dÃ©sactiver le joueur
             }
-            else if (noScene == 0) // Si nous somme sur la première scène (scène 0)
+            else if (noScene == 0) // Si nous somme sur la premiÃ¨re scÃ¨ne (scÃ¨ne 0)
             {
-                // Appelle la méthode publique dans gestion jeu pour conserver les informations du niveau 1
+                // Appelle la mÃ©thode publique dans gestion jeu pour conserver les informations du niveau 1
                 _gestionJeu.SetNiveau1(_gestionJeu.GetPointage(), Time.time);
 
-                // Charge la scène suivante
+                // Charge la scÃ¨ne suivante
                 SceneManager.LoadScene(noScene + 1);            
             }
-            else if (noScene == 1) // Si nous somme sur la deuxième scène (scène 1)
+            else if (noScene == 1) // Si nous somme sur la deuxiÃ¨me scÃ¨ne (scÃ¨ne 1)
             {
-                // Appelle la méthode publique dans gestion jeu pour conserver les informations du niveau 2
+                // Appelle la mÃ©thode publique dans gestion jeu pour conserver les informations du niveau 2
                 _gestionJeu.SetNiveau2(_gestionJeu.GetPointage(), Time.time);
 
-                // Charge la scène suivante
+                // Charge la scÃ¨ne suivante
                 SceneManager.LoadScene(noScene + 1);
             }
         }
