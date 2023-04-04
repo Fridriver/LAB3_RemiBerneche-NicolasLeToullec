@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        float temps = Time.time - _gestionJeu.GetTempsDepart();
+        float temps = Time.time - _gestionJeu.GetTempsDebut();
         _txtTemps.text = "Temps : " + temps.ToString("f2");
         GestionPause();
     }

@@ -11,6 +11,8 @@ public class GestionJeu : MonoBehaviour
     private float _tempsDebut = 0f;
     private bool _debutPartie = false;
 
+    private float _tempsFinal = 0;
+
     private int _pointage = 0;  // Attribut qui conserve le nombre d'accrochages
 
     private int _accrochageNiveau1 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 1
@@ -124,5 +126,15 @@ public class GestionJeu : MonoBehaviour
     public float GetTempsDebut()
     {
         return _tempsDebut;
+    }
+
+    public void SetTempsFinal(float p_tempFinal)
+    {
+        _tempsFinal = p_tempFinal - _tempsDebut;
+    }
+
+    public float GetTempsFinal()
+    {
+        return _tempsFinal;
     }
 }
