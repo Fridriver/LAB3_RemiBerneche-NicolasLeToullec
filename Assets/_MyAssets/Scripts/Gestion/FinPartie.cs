@@ -31,7 +31,7 @@ public class FinPartie : MonoBehaviour
             //_finPartie = true; // met le booléen à vrai pour indiquer la fin de la partie
             int noScene = SceneManager.GetActiveScene().buildIndex; // Récupère l'index de la scène en cours
 
-            if (noScene == 2)  // Si nous somme sur la dernière scène (scène 2)
+            if (noScene == 3)  // Si nous somme sur la dernière scène (scène 2)
             {
                 int accrochages = _gestionJeu.GetPointage();  // Récupère le pointage total dans gestion jeu
 
@@ -80,8 +80,11 @@ public class FinPartie : MonoBehaviour
                 //Debug.Log("Temps sans jouer : " + _gestionJeu.GetTempsDebut().ToString("f2") + " secondes");
 
                 _player.finPartieJoueur();  // Appeler la méthode publique dans Player pour désactiver le joueur
+
+                // Charge la scène suivante
+                SceneManager.LoadScene(noScene + 1);
             }
-            else if (noScene == 0) // Si nous somme sur la première scène (scène 0)
+            else if (noScene == 1) // Si nous somme sur la première scène (scène 0)
             {
                 // Appelle la méthode publique dans gestion jeu pour conserver les informations du niveau 1
                 _gestionJeu.SetNiveau1(_gestionJeu.GetPointage(), Time.time);
@@ -89,7 +92,7 @@ public class FinPartie : MonoBehaviour
                 // Charge la scène suivante
                 SceneManager.LoadScene(noScene + 1);            
             }
-            else if (noScene == 1) // Si nous somme sur la deuxième scène (scène 1)
+            else if (noScene == 2) // Si nous somme sur la deuxième scène (scène 1)
             {
                 // Appelle la méthode publique dans gestion jeu pour conserver les informations du niveau 2
                 _gestionJeu.SetNiveau2(_gestionJeu.GetPointage(), Time.time);

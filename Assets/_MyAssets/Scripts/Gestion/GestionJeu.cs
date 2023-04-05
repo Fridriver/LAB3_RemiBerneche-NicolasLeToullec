@@ -8,8 +8,12 @@ public class GestionJeu : MonoBehaviour
 {
     // ***** Attributs *****
 
+    private float _tempsDepart = 0;
+
     private float _tempsDebut = 0f;
     private bool _debutPartie = false;
+
+    private float _tempsFinal = 0;
 
     private int _pointage = 0;  // Attribut qui conserve le nombre d'accrochages
 
@@ -39,7 +43,8 @@ public class GestionJeu : MonoBehaviour
 
     private void Start()
     {
-        InstructionsDepart();  // Affiche les instructions de départ
+        _tempsDepart = Time.time;
+        //InstructionsDepart();  // Affiche les instructions de départ
     }
 
     private void Update()
@@ -51,6 +56,11 @@ public class GestionJeu : MonoBehaviour
             _debutPartie = true;
             _tempsDebut += Time.time;
             //Debug.Log("GO : " + _tempsDebut.ToString("f2"));
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 4 || SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -72,6 +82,8 @@ public class GestionJeu : MonoBehaviour
     public void AugmenterPointage()
     {
         _pointage++;
+        UIManager uiManager = FindObjectOfType<UIManager>();
+        uiManager.ChangerPointage(_pointage);
     }
 
     // Accesseur qui retourne la valeur de l'attribut pointage
@@ -123,6 +135,16 @@ public class GestionJeu : MonoBehaviour
     //Méthode qui reçois le timer sans bouger au début
     public float GetTempsDebut()
     {
-        return _tempsDebut;
+        return _tempsDepart;
+    }
+
+    public void SetTempsFinal(float p_tempFinal)
+    {
+        _tempsFinal = p_tempFinal - _tempsDepart;
+    }
+
+    public float GetTempsFinal()
+    {
+        return _tempsFinal;
     }
 }
