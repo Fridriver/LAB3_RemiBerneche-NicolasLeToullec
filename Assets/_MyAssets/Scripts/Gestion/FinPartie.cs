@@ -52,30 +52,30 @@ public class FinPartie : MonoBehaviour
 
                 //----------------------------------------------------------
                 // Message pour le niveau 1
-                if (_gestionJeu.GetTempsDebut() < _gestionJeu.GetTempsNiv1())
-                {
-                    Debug.Log("Le temps pour le niveau 1 est de : " + (_gestionJeu.GetTempsNiv1() - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
-                    Debug.Log("Vous avez accroché au niveau 1 : " + _gestionJeu.GetAccrochagesNiv1() + " obstacles");
-                    Debug.Log("Temps total niveau 1 : " + (tempsTotalniv1 - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
-                }
-                else
-                {
-                    Debug.Log("Le temps pour le niveau 1 est de : " + (_gestionJeu.GetTempsDebut() - _gestionJeu.GetTempsNiv1()).ToString("f2") + " secondes");
-                    Debug.Log("Vous avez accroché au niveau 1 : " + _gestionJeu.GetAccrochagesNiv1() + " obstacles");
-                    Debug.Log("Temps total niveau 1 : " + (_gestionJeu.GetTempsDebut() - tempsTotalniv1).ToString("f2") + " secondes");
-                }
+                //if (_gestionJeu.GetTempsDebut() < _gestionJeu.GetTempsNiv1())
+                //{
+                //    Debug.Log("Le temps pour le niveau 1 est de : " + (_gestionJeu.GetTempsNiv1() - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
+                //    Debug.Log("Vous avez accroché au niveau 1 : " + _gestionJeu.GetAccrochagesNiv1() + " obstacles");
+                //    Debug.Log("Temps total niveau 1 : " + (tempsTotalniv1 - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
+                //}
+                //else
+                //{
+                //    Debug.Log("Le temps pour le niveau 1 est de : " + (_gestionJeu.GetTempsDebut() - _gestionJeu.GetTempsNiv1()).ToString("f2") + " secondes");
+                //    Debug.Log("Vous avez accroché au niveau 1 : " + _gestionJeu.GetAccrochagesNiv1() + " obstacles");
+                //    Debug.Log("Temps total niveau 1 : " + (_gestionJeu.GetTempsDebut() - tempsTotalniv1).ToString("f2") + " secondes");
+                //}
 
-                // Message pour le niveau 2
-                Debug.Log("Le temps pour le niveau 2 est de : " + _tempsNiveau2.ToString("f2") + " secondes");
-                Debug.Log("Vous avez accroché au niveau 2 : " + _accrochagesNiveau2 + " obstacles");
-                Debug.Log("Temps total niveau 2 : " + tempsTotalniv2.ToString("f2") + " secondes");
+                //// Message pour le niveau 2
+                //Debug.Log("Le temps pour le niveau 2 est de : " + _tempsNiveau2.ToString("f2") + " secondes");
+                //Debug.Log("Vous avez accroché au niveau 2 : " + _accrochagesNiveau2 + " obstacles");
+                //Debug.Log("Temps total niveau 2 : " + tempsTotalniv2.ToString("f2") + " secondes");
 
-                // Message pour le niveau 3
-                Debug.Log("Le temps pour le niveau 3 est de : " + _tempsNiveau3.ToString("f2") + " secondes");
-                Debug.Log("Vous avez accroché au niveau 3 : " + _accrochagesNiveau3 + " obstacles");
-                Debug.Log("Temps total niveau 3 : " + tempsTotalniv3.ToString("f2") + " secondes");
+                //// Message pour le niveau 3
+                //Debug.Log("Le temps pour le niveau 3 est de : " + _tempsNiveau3.ToString("f2") + " secondes");
+                //Debug.Log("Vous avez accroché au niveau 3 : " + _accrochagesNiveau3 + " obstacles");
+                //Debug.Log("Temps total niveau 3 : " + tempsTotalniv3.ToString("f2") + " secondes");
 
-                Debug.Log("Le temps total pour les trois niveau est de : " + ((tempsTotalniv1 + tempsTotalniv2 + tempsTotalniv3) - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
+                //Debug.Log("Le temps total pour les trois niveau est de : " + ((tempsTotalniv1 + tempsTotalniv2 + tempsTotalniv3) - _gestionJeu.GetTempsDebut()).ToString("f2") + " secondes");
 
                 //Debug.Log("Temps sans jouer : " + _gestionJeu.GetTempsDebut().ToString("f2") + " secondes");
 

@@ -4313,7 +4313,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 833841066}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1233373100}
+        m_TargetAssemblyTypeName: GestionScene, Assembly-CSharp
+        m_MethodName: ChargerSceneDepart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &833841066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6628,6 +6640,7 @@ GameObject:
   - component: {fileID: 1233373097}
   - component: {fileID: 1233373096}
   - component: {fileID: 1233373099}
+  - component: {fileID: 1233373100}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6734,6 +6747,18 @@ MonoBehaviour:
   _txtAccrochages: {fileID: 1110440277}
   _txtTemps: {fileID: 1860108167}
   _menuPause: {fileID: 813717506}
+--- !u!114 &1233373100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233373094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0617ce4494e2654c877d0d980c846bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1256599380
 GameObject:
   m_ObjectHideFlags: 0
@@ -7042,7 +7067,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1269145525}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1233373099}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: EnleverPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1269145525
 MonoBehaviour:
   m_ObjectHideFlags: 0

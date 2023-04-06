@@ -11,7 +11,7 @@ public class GestionCollision : MonoBehaviour
 
     private Color _texture;
 
-    private float time = 0;
+    //private float time = 0;
 
     // ***** M�thodes priv�es *****
     private void Start()
