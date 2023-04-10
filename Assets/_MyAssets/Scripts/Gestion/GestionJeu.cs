@@ -143,5 +143,10 @@ public class GestionJeu : MonoBehaviour
         return _tempsFinal;
     }
 
+    [SerializeField] private GameObject _menuInstructions = default;
+    public void AfficherInstructions()
+    {
+        _menuInstructions.SetActive(true);
+    }
 
 }

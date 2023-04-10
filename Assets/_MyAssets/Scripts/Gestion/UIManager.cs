@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _menuPause = default;
     private bool _enPause;
     private GestionJeu _gestionJeu;
-
 
     void Start()
     {
