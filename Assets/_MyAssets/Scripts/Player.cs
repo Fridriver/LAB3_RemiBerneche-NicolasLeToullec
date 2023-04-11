@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public float speed;
     public float rotationSpeed;
 
+    private float tempsDebut = 50;
+
     //  ***** M�thodes privées *****
 
     private void Start()
@@ -58,5 +60,16 @@ public class Player : MonoBehaviour
     public void finPartieJoueur()
     {
         gameObject.SetActive(false);  // Désactive le gameObject
+    }
+
+    public void SetTempsDebut(float temps)
+    {
+        tempsDebut += temps;
+    }
+
+
+    public float GetTempsDebut()
+    {
+        return tempsDebut;
     }
 }

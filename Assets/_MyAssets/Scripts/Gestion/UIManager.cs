@@ -6,11 +6,13 @@ using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _player = default;
     [SerializeField] private TMP_Text _txtAccrochages = default;
     [SerializeField] private TMP_Text _txtTemps = default;
     [SerializeField] private GameObject _menuPause = default;
     private bool _enPause;
     private GestionJeu _gestionJeu;
+    //private Player player;
 
     void Start()
     {
@@ -23,8 +25,18 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        float temps = Time.time - _gestionJeu.GetTempsDebut();
-        _txtTemps.text = "Temps : " + temps.ToString("f2");
+        float temps = _gestionJeu.GetTempsDebut();
+
+        _txtTemps.text = "Temps : " + (Time.time - temps + _gestionJeu.GetTempsNiv1() + _gestionJeu.GetTempsNiv2()).ToString("f2");
+        if (_player.transform.position == new Vector3(-45f, 0.3f, -45f))
+        {
+            _gestionJeu.TempsSansBouger = Time.time;
+        }
+            if (_player.transform.position != new Vector3(-45f, 0.3f, -45f))
+        {
+            _txtTemps.text = "Temps : " + (temps - _gestionJeu.TempsSansBouger + _gestionJeu.GetTempsNiv1() + _gestionJeu.GetTempsNiv2()).ToString("f2");
+        }
+
         GestionPause();
     }
 
