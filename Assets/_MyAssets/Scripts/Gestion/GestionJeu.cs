@@ -10,7 +10,7 @@ public class GestionJeu : MonoBehaviour
 
     private float _tempsDepart = 0;
 
-    //private float _tempsDebut = 0f;
+    private float _tempsDebut = 0f;
     private bool _debutPartie = false;
 
     private float _tempsFinal = 0;
@@ -51,10 +51,10 @@ public class GestionJeu : MonoBehaviour
     {
         int noScene = SceneManager.GetActiveScene().buildIndex;
 
-        if (!_debutPartie && Input.anyKeyDown && noScene == 1)
+        if (!_debutPartie && Input.anyKeyDown && noScene != 0 && noScene != 4)
         {
-            //_debutPartie = true;
-            //_tempsDebut += Time.time;
+            _debutPartie = true;
+            _tempsDebut += Time.time;
             //Debug.Log("GO : " + _tempsDebut.ToString("f2"));
         }
 
