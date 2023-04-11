@@ -31,8 +31,9 @@ public class UIManager : MonoBehaviour
         if (_player.transform.position == new Vector3(-45f, 0.3f, -45f))
         {
             _gestionJeu.TempsSansBouger = Time.time;
+            Debug.Log("GO : " + _gestionJeu.TempsSansBouger);
         }
-            if (_player.transform.position != new Vector3(-45f, 0.3f, -45f))
+        if (_player.transform.position != new Vector3(-45f, 0.3f, -45f))
         {
             _txtTemps.text = "Temps : " + (temps - _gestionJeu.TempsSansBouger + _gestionJeu.GetTempsNiv1() + _gestionJeu.GetTempsNiv2()).ToString("f2");
         }
