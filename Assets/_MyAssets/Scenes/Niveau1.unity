@@ -6744,7 +6744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9145d7da61ac74eb5ca577e72cf6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 2043416544}
   _txtAccrochages: {fileID: 1110440277}
   _txtTemps: {fileID: 1860108167}
   _menuPause: {fileID: 813717506}
@@ -11459,11 +11458,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0237427, y: 2.0705063, z: 0.996912}
   m_Center: {x: -0.00000023841858, y: 1.0352545, z: 0.000000067055225}
---- !u!1 &2043416544 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 208732238737689209, guid: 1c345808a7e4271449bd4af58ab4a350, type: 3}
-  m_PrefabInstance: {fileID: 208732236889773435}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2053695331
 GameObject:
   m_ObjectHideFlags: 0
