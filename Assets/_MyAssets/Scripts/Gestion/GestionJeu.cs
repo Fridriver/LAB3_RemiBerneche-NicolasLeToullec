@@ -45,11 +45,12 @@ public class GestionJeu : MonoBehaviour
     private void Start()
     {
         InstructionsDepart();  // Affiche les instructions de départ
+        _tempsDepart = Time.time;
+
     }
 
     private void Update()
     {
-        _tempsDepart = Time.time;
         //int noScene = SceneManager.GetActiveScene().buildIndex;
 
         //if (!_debutPartie && Input.anyKeyDown && noScene != 0 && noScene != 4)

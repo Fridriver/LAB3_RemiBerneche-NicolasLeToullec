@@ -13,9 +13,9 @@ public class AffichageFinal : MonoBehaviour
     void Start()
     {
         _gestionJeu = FindObjectOfType<GestionJeu>();
-        _txtTempsTotal.text = _gestionJeu.GetTempsDebut().ToString("f2") + " sec.";
+        _txtTempsTotal.text = (Time.time-_gestionJeu.GetTempsDebut()).ToString("f2") + " sec.";
         _txtAccorchagesTotal.text = _gestionJeu.GetPointage().ToString();
         float pointageTotal = _gestionJeu.GetTempsFinal() + _gestionJeu.GetPointage();
-        _txtPointageTotal.text = (_gestionJeu.GetTempsDebut() + pointageTotal).ToString("f2") + " sec.";
+        _txtPointageTotal.text = ((Time.time-_gestionJeu.GetTempsDebut()) + pointageTotal).ToString("f2") + " sec.";
     }
 }

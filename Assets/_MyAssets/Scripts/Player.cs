@@ -14,7 +14,9 @@ public class Player : MonoBehaviour
     public float speed;
     public float rotationSpeed;
 
-    private float tempsDebut = 50;
+    private float tempsDebut = 0;
+    private float tempsAccumule = 0;
+    private bool hasMoved = false;
 
     //  ***** M�thodes privées *****
 
@@ -29,6 +31,21 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         MouvementsJoueur();
+        if(_rb.transform.position == new Vector3(-45f, 0.3f, -45f))
+        {
+            if (hasMoved == false)
+            {
+                tempsDebut = Time.time;
+            }
+            
+        }else if(_rb.transform.position != new Vector3(-45f, 0.3f, -45f))
+        {
+            if (hasMoved == false)
+            {
+                tempsAccumule += Time.time;
+            }
+            hasMoved = true;
+        }
     }
 
     /*
@@ -61,15 +78,18 @@ public class Player : MonoBehaviour
     {
         gameObject.SetActive(false);  // Désactive le gameObject
     }
-
-    public void SetTempsDebut(float temps)
-    {
-        tempsDebut += temps;
-    }
-
-
+    
     public float GetTempsDebut()
     {
         return tempsDebut;
     }
+    public float GetTempsAccumule()
+    {
+        return tempsAccumule;
+    }
+    public bool GetHasMoved()
+    {
+        return hasMoved;
+    }
+
 }
