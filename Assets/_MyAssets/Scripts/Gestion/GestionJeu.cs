@@ -8,20 +8,21 @@ public class GestionJeu : MonoBehaviour
 {
     // ***** Attributs *****
 
+    private float _tempsSansBouger = 0;
     private float _tempsDepart = 0;
 
-    private float _tempsDebut = 0f;
-    private bool _debutPartie = false;
+    //private float _tempsDebut = 0f;
+    //private bool _debutPartie = false;
 
     private float _tempsFinal = 0;
 
     private int _pointage = 0;  // Attribut qui conserve le nombre d'accrochages
 
     private int _accrochageNiveau1 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 1
-    private float _tempsNiveau1 = 0.0f;  // Attribut qui conserve le temps pour le niveau 1
+    private float _tempsNiveau1 = 0;  // Attribut qui conserve le temps pour le niveau 1
 
     private int _accrochageNiveau2 = 0;  // Atribut qui conserve le nombre d'accrochage pour le niveau 2
-    private float _tempsNiveau2 = 0.0f;  // Attribut qui conserve le temps pour le niveau 2
+    private float _tempsNiveau2 = 0;  // Attribut qui conserve le temps pour le niveau 2
 
     // ***** Méthodes privées *****
     private void Awake()
@@ -43,20 +44,21 @@ public class GestionJeu : MonoBehaviour
 
     private void Start()
     {
-        _tempsDepart = Time.time;
         InstructionsDepart();  // Affiche les instructions de départ
+        _tempsDepart = Time.time;
+
     }
 
     private void Update()
     {
-        int noScene = SceneManager.GetActiveScene().buildIndex;
+        //int noScene = SceneManager.GetActiveScene().buildIndex;
 
-        if (!_debutPartie && Input.anyKeyDown && noScene != 0 && noScene != 4)
-        {
-            _debutPartie = true;
-            _tempsDebut += Time.time;
-            //Debug.Log("GO : " + _tempsDebut.ToString("f2"));
-        }
+        //if (!_debutPartie && Input.anyKeyDown && noScene != 0 && noScene != 4)
+        //{
+        //    _debutPartie = true;
+        //    _tempsDebut += Time.time;
+        //    //Debug.Log("GO : " + _tempsDebut.ToString("f2"));
+        //}
 
         if (SceneManager.GetActiveScene().buildIndex == 4 || SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -149,4 +151,5 @@ public class GestionJeu : MonoBehaviour
         _menuInstructions.SetActive(true);
     }
 
+    public float TempsSansBouger { get => _tempsSansBouger; set => _tempsSansBouger = value; }
 }

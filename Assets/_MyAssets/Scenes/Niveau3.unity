@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b005d01509cae5e43b7426bea5fe85ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _menuInstructions: {fileID: 0}
 --- !u!4 &15677712
 Transform:
   m_ObjectHideFlags: 0
@@ -2920,6 +2921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9145d7da61ac74eb5ca577e72cf6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 571712682}
   _txtAccrochages: {fileID: 1698915862}
   _txtTemps: {fileID: 113911524}
   _menuPause: {fileID: 209586200}
@@ -3947,6 +3949,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4221340309975724, guid: 494a0daefaadbc747a867c0b83a27403, type: 3}
   m_PrefabInstance: {fileID: 562116051}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &571712682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 208732238737689209, guid: 1c345808a7e4271449bd4af58ab4a350, type: 3}
+  m_PrefabInstance: {fileID: 1002223822}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &615981317 stripped
 Transform:

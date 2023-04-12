@@ -9,12 +9,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text _txtAccrochages = default;
     [SerializeField] private TMP_Text _txtTemps = default;
     [SerializeField] private GameObject _menuPause = default;
+
     private bool _enPause;
     private GestionJeu _gestionJeu;
+    private Player _player;
 
     void Start()
     {
         _gestionJeu = FindObjectOfType<GestionJeu>();
+        _player = FindObjectOfType<Player>();
         _txtAccrochages.text = "Accrochages : " + _gestionJeu.GetPointage();
         Time.timeScale = 1;
         _enPause = false;
@@ -23,7 +26,16 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        float temps = Time.time - _gestionJeu.GetTempsDebut();
+
+        float temps=0;
+        if (_player.GetHasMoved()==false)
+        {
+            temps = Time.time - _player.GetTempsDebut();
+        }else if(_player.GetHasMoved()==true)
+        {
+            temps = Time.time - _player.GetTempsAccumule();
+
+        }
         _txtTemps.text = "Temps : " + temps.ToString("f2");
         GestionPause();
     }
